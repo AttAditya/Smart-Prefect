@@ -1,0 +1,4 @@
+command: **leave-my-voice**
+usage: *Leaves* the *Voice Channel* user is currently using.
+
+**NOTE**: Returns error if bot is not in the voice channel that the user is using.

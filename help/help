@@ -1,0 +1,8 @@
+command: **help**
+usage: Gets the *help guide* for a command.
+syntax: ```html
+<prefix> help <command-name>
+```
+
+**Note**: If you want to see all commands use `command-names`
+**Note**: If you have not requested for help guide of help command, the command you requested might not exist.

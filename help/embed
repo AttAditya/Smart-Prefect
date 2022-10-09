@@ -1,0 +1,9 @@
+command: **embed**
+usage: Creates a *custom embedded message*.
+syntax: ```html
+<prefix> embed <color>
+<message-title>
+<message-description>
+<message-field-name>
+<message-content>
+```

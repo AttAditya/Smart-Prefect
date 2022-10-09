@@ -1,0 +1,2 @@
+command: **ping**
+usage: Returns *`Ping!`* as reply.

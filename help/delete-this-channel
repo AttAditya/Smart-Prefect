@@ -1,0 +1,3 @@
+command: **delete-this-channel**
+usage: *Deletes* the current channel.
+permissions: `Manage Channels` or `Manage Guild` or `Administrator`
