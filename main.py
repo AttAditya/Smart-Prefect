@@ -10,19 +10,13 @@ prefixes = f("locale/prefix").split("\n")
 @bot.event
 async def on_ready():
     status = discord.Status.online
-    activity = discord.Activity(
-        name="For Knowledge! 🧑‍🎓",
-        type=3
-    )
-    presence = {
-        "status": status,
-        "activity": activity
-    }
+    activity = discord.Activity(name="For Knowledge! 🧑‍🎓", type=3)
+    presence = {"status": status, "activity": activity}
 
     await bot.change_presence(**presence)
-    
+
     print(f"\n{bot.user} is active now...\n")
-    
+
     w("locale/error.html", "w", "")
     process.web.start()
 
@@ -31,7 +25,7 @@ async def on_ready():
 async def on_message(message):
     if message.author == bot.user:
         return
-    
+
     is_command = False
     used_prefix = ""
     for prefix in prefixes:
@@ -46,12 +40,7 @@ async def on_message(message):
         command = content.lower().split(" ")[0]
         args = " ".join(content.split(" ")[1:])
 
-        data = [
-            message,
-            command,
-            args,
-            bot
-        ]
+        data = [message, command, args, bot]
 
         await process.commands.run(*data)
 
@@ -60,18 +49,19 @@ async def on_message(message):
 async def on_raw_reaction_add(payload):
     await process.reactions.run(payload, bot)
 
+
 @bot.event
 async def on_raw_reaction_remove(payload):
     await process.reactions.run(payload, bot)
 
 
-if not(f("token")):
+if not (f("token")):
     token = os.environ["TOKEN"]
 else:
     token = f("token")
 
 try:
-    if not(f"webdev"):
+    if not (f("webdev")):
         bot.run(token)
     else:
         process.web.start()
