@@ -1,3 +1,9 @@
 *.pyc
 spotdl/
 __pycache__/
+*.lock
+*.toml
+*.replit
+.replit
+*.nix
+venv/
