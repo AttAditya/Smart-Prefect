@@ -1,0 +1,3 @@
+command: **reset-this-channel**
+usage: *Resets* the current channel. All messages are deleted from the channel.
+permissions: `Manage Channels` or `Manage Guild` or `Administrator`

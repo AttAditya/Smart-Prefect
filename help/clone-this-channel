@@ -1,0 +1,3 @@
+command: **clone-this-channel**
+usage: *Clones* the current channel.
+permissions: `Manage Channels` or `Manage Guild` or `Administrator`

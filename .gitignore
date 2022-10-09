@@ -1,0 +1,3 @@
+*.pyc
+spotdl/
+__pycache__/

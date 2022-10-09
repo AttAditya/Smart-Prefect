@@ -1,0 +1,7 @@
+command: **yn-poll**
+usage: *Creates* a *Yes-No Poll*.
+syntax: ```html
+<prefix> yn-poll <poll-topic>
+```
+
+**NOTE**: Creates *Random YN Poll* if no poll topic provided.

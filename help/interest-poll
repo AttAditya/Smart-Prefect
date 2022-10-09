@@ -1,0 +1,7 @@
+command: **interest-poll**
+usage: *Creates* an *Interest Poll*.
+syntax: ```html
+<prefix> interest-poll <poll-topic>
+```
+
+**NOTE**: Creates *Random Interest Poll* if no poll topic provided.

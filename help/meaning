@@ -1,0 +1,7 @@
+command: **meaning**
+usage: Shows *word meaning(s)* of requested *word*.
+syntax: ```html
+<prefix> meaning <word>
+```
+
+**NOTE**: Returns error if no word provided.

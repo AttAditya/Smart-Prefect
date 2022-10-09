@@ -1,0 +1,7 @@
+command: **spotify**
+usage: *Searches and plays songs* from *Spotify*.
+syntax: ```html
+<prefix> spotify <song>
+```
+
+**NOTE**: Returns error if bot is not in the voice channel that the user is using.
