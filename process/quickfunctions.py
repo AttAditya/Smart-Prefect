@@ -1,5 +1,4 @@
-import os
-
+from modules import os
 
 def f(filepath: str, **replace):
     filedata = ""
@@ -23,3 +22,20 @@ def w(filepath: str, method: str, data: str):
             file.close()
 
     return written
+
+
+def bot_prefixes():
+    raw = f("locale/prefix").split("\n")
+    prefixes = {}
+
+    for raw_prefix in raw:
+        category = raw_prefix[:1]
+        prefix = raw_prefix[2:]
+
+        if category not in prefixes:
+            prefixes[category] = []
+        
+        prefixes[category].append(prefix)
+    
+    return prefixes
+

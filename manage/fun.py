@@ -1,8 +1,7 @@
-from modules import discord
+from modules import random, discord
 
 async def ping(ctx, args, bot):
     await ctx.channel.send(f"PING! (Latency: {int(bot.latency*1000)/1000}ms)")
-
 
 async def embed_message(ctx, args, bot):
     parts = args.split("\n")
@@ -62,9 +61,26 @@ async def yn_poll(ctx, args, bot):
 
     await ctx.delete()
 
+async def random_image(ctx, args, bot):
+    img_id = random.randrange(1, 1084)
+    img_url = f"https://picsum.photos/id/{img_id}/1920/1080/"
+
+    m_color = 0xbf96ff
+    m_title = "Random Image"
+
+    embed_info = {"title": m_title, "color": m_color}
+    embed = discord.Embed(**embed_info)
+    embed.set_image(url=img_url)
+
+    embed.add_field(name="Random Image", value=f"ID: {img_id}")
+
+    await ctx.channel.send(embed=embed)
+
 index = {
     "ping": ping,
     "embed": embed_message,
     "interest-poll": interest_poll,
-    "yn-poll": yn_poll
+    "yn-poll": yn_poll,
+    "random-image": random_image
 }
+
