@@ -6,4 +6,7 @@ __pycache__/
 *.replit
 .replit
 *.nix
-venv/
+env/
+token
+webdev
+.bat

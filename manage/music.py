@@ -1,4 +1,4 @@
-from modules import os, discord
+from modules import discord
 
 async def check_voice(ctx, bot):
     voice_state = ctx.author.voice
