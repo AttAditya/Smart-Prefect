@@ -1,7 +1,6 @@
 from modules import os
 from process.quickfunctions import f
 
-import process.web as web
 import process.commands as commands
 import process.reactions as reactions
 import process.ready as ready
@@ -23,8 +22,6 @@ def run():
 	try:
 		if not (f("webdev")):
 			bot.run(token)
-		else:
-			web.start()
 	except:
-		web.start()
+		pass
 

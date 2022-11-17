@@ -1,6 +1,5 @@
 from modules import discord
 from process.quickfunctions import w
-import process.web
 
 async def run(bot):
 	status = discord.Status.online
@@ -12,5 +11,4 @@ async def run(bot):
 	print(f"\n{bot.user} is active now...\n")
 
 	w("locale/error.html", "w", "")
-	process.web.start()
 
