@@ -1,4 +1,5 @@
 from modules import os
+from process.database import FILESYSTEM
 
 def f(filepath: str, **replace):
     filedata = ""
@@ -20,6 +21,9 @@ def w(filepath: str, method: str, data: str):
             file.write(data)
             written = True
             file.close()
+    
+    if f(filepath):
+        FILESYSTEM.put(filepath, f(filepath))
 
     return written
 
