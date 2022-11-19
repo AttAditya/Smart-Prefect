@@ -1,0 +1,15 @@
+command: **calculate**
+usage: *Calculates* given *expression*.
+syntax: ```html
+<prefix> calculate <expression>
+```operators: ```yaml
++: Add
+-: Subtract
+*: Multiply
+/: Divide
+**: Power
+%: Remainder
+(): Brackets
+```functions: use `<prefix> functions` to get the list.
+
+**NOTE**: Returns 0 if no expression given.

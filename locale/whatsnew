@@ -1,17 +1,5 @@
-v0.1.3
-- Added a few new commands: prefixes, random-image, whatsnew
-- Changing Primary Hosting to Heroku from Replit.
-- Updated Source Code to look more organized and neat.
-
-v0.1.3a
-- Updated to better adapt Heroku Platform for hosting.
-
-v0.1.3b
-- Updated to better adapt Heroku Platform for hosting.
-
-v0.1.3c
-- Updated to better adapt Heroku Platform for hosting.
-
-v0.1.3d
-- Updated to better adapt Heroku Platform for hosting.
+v0.1.4
+- Added new commands: create-channel, calculate, functions
+- Updated commands: status, ping
+- Updated for Heroku Adaptations
 

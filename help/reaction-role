@@ -1,0 +1,7 @@
+command: **reaction-role**
+usage: Sends a *Reaction Role Message* for requested *role*. Users can add reaction to get role, else remove reaction to remove role.
+syntax: ```html
+<prefix> reaction-role <role>
+```
+
+**NOTE**: Returns error if no role provided or role invalid.
