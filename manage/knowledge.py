@@ -1,4 +1,66 @@
-from modules import discord, requests, bs4, json
+from modules import discord, requests, bs4, json, math
+from math import *
+
+async def function_names(ctx, args, bot):
+	content = ""
+	functions = [f for f in dir(math) if not(f.startswith("_"))]
+
+	content = ", ".join(functions)
+	content = f"```csv\n{content}```"
+	content += "\n**NOTE**: If you passed name of a function and this appears, \
+		the function might not be available. \
+		You can also try removing spaces if any after command name."
+
+	if args in functions:
+		if hasattr(getattr(math, args), "__text_signature__"):
+			content = str(getattr(math, args).__text_signature__)
+			content = content.replace(" ", "").split(",")[1:-1]
+			content = ", ".join(content)
+			content = f"**Function**: {args}({content})\n"
+			content += f"**Description**: {str(getattr(math, args).__doc__)}"
+		else:
+			content = f"**Special Value**: {args}\n"
+			content += f"**Description**: {str(getattr(math, args))}"
+
+	embed_info = {
+		"title": "Knowledge",
+		"color": 0xffe099
+	}
+	embed = discord.Embed(**embed_info)
+
+	field1 = {
+		"name": "All Math Functions Available To Use With Calculate",
+		"value": content
+	}
+	embed.add_field(**field1)
+
+	await ctx.channel.send(embed=embed)
+
+async def calculator(ctx, args, bot):
+	content = ""
+	try:
+		content = eval(args if args.replace(" ", "") != "" else "0")
+		args_ = args.replace("*", "\\*")
+		content = f"**Expression**: {args_}\n\
+			**Result**: *`{content}`*"
+	except:
+		content = f"**Expression**: {args}\n\
+			**Result**: Error! \
+			*Please check you expression...*"
+
+	embed_info = {
+		"title": "Knowledge",
+		"color": 0xffe099
+	}
+	embed = discord.Embed(**embed_info)
+
+	field1 = {
+		"name": "Calculator",
+		"value": content
+	}
+	embed.add_field(**field1)
+
+	await ctx.channel.send(embed=embed)
 
 async def wotd(ctx, args, bot):
 	embed_info = {
@@ -98,6 +160,8 @@ async def meaning(ctx, args, bot):
 	await ctx.channel.send(embed=embed)
 
 index = {
+	"calculate": calculator,
+	"functions": function_names,
 	"meaning": meaning,
 	"daily-word": wotd
 }

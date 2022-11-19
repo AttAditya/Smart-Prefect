@@ -1,23 +1,23 @@
 from modules import os, deta
 
 def __f__(filepath: str, **replace):
-    filedata = ""
-    if os.path.isfile(filepath):
-        with open(filepath, "r") as file:
-            filedata = file.read()
-            file.close()
+	filedata = ""
+	if os.path.isfile(filepath):
+		with open(filepath, "r") as file:
+			filedata = file.read()
+			file.close()
 
-    return filedata
+	return filedata
 
 def __w__(filepath: str, data: str):
-    written = False
-    if os.path.isfile(filepath):
-        with open(filepath, "w") as file:
-            file.write(data)
-            written = True
-            file.close()
+	written = False
+	if os.path.isfile(filepath):
+		with open(filepath, "w") as file:
+			file.write(data)
+			written = True
+			file.close()
 
-    return written
+	return written
 
 deta_key = ""
 if not (__f__("deta")):
@@ -28,11 +28,13 @@ else:
 cloud = deta.Deta(deta_key)
 
 FILESYSTEM = cloud.Drive("locale")
-print(FILESYSTEM.list())
 
 def load(*args, **kwargs):
 	file_list = FILESYSTEM.list(*args, **kwargs)["names"]
 	
 	for file_name in file_list:
-		__w__(file_name, FILESYSTEM.get(file_name))
+		file = FILESYSTEM.get(file_name)
+		file_data = str(file.read().decode())
+		__w__(file_name, file_data)
+		file.close()
 

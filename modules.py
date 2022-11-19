@@ -11,3 +11,5 @@ import bs4
 import json
 import random
 import deta
+import socket
+import math

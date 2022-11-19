@@ -1,0 +1,8 @@
+command: **create-channel**
+usage: *Creates* a new channel with given *type* and given *name*.
+permissions: `Manage Channels` or `Manage Guild` or `Administrator`
+syntax: ```html
+<prefix> create-channel <type> <name>
+```
+
+**NOTE**: Returns error if no type provided or type invalid or no name provided.

@@ -1,40 +1,42 @@
 from modules import discord
 from process.quickfunctions import f
 
+embed_info = {"title": "Server Management", "color": 0xecf542}
+
 async def check_permission(user, channel, permissions):
-    required = []
-    available = {
-        "admin": user.guild_permissions.administrator,
-        "channels": user.guild_permissions.manage_channels,
-        "guild": user.guild_permissions.manage_guild,
-        "roles": user.guild_permissions.manage_roles,
-        "messages": user.guild_permissions.manage_messages
-    }
+	required = []
+	available = {
+		"admin": user.guild_permissions.administrator,
+		"channels": user.guild_permissions.manage_channels,
+		"guild": user.guild_permissions.manage_guild,
+		"roles": user.guild_permissions.manage_roles,
+		"messages": user.guild_permissions.manage_messages
+	}
 
-    for permission in permissions:
-        if permission in available:
-            required.append(available[permission])
+	for permission in permissions:
+		if permission in available:
+			required.append(available[permission])
 
-    permit = False
-    for satisfying in required:
-        if satisfying:
-            permit = True
-            break
+	permit = False
+	for satisfying in required:
+		if satisfying:
+			permit = True
+			break
 
-    if not permit:
-        embed = discord.Embed(**embed_info)
-        embed.color = 0xff2e2e
+	if not permit:
+		embed = discord.Embed(**embed_info)
+		embed.color = 0xff2e2e
 
-        field1 = {
-            "name": "Error",
-            "value": "You do not have permissions."
-        }
-        embed.add_field(**field1)
+		field1 = {
+			"name": "Error",
+			"value": "You do not have permissions."
+		}
+		embed.add_field(**field1)
 
-        await channel.send(embed=embed)
+		await channel.send(embed=embed)
 
-        return False
-    return True
+		return False
+	return True
 
 async def run(payload, bot):
 	emoji = payload.emoji

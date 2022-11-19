@@ -1,0 +1,8 @@
+command: **functions**
+usage: Shows all the *functions* available to use with *calculate*. If provided with *function*, returns help for *function*.
+syntax: ```html
+<prefix> functions <function>
+```
+
+**NOTE**: This function has mixed content, it is for both, functions and special values.
+**NOTE**: If function not provided, it shows list of all functions.
