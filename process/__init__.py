@@ -10,12 +10,11 @@ import process.web as web
 
 import bot as smart_prefect_bot
 
-web_thread = web.app_thread
-
 def run(*args, **kwargs):
-	web_thread.start()
 	database.load()
 	bot = smart_prefect_bot.Prefect()
+	
+	web.run(*args, **kwargs)
 
 	token = ""
 	if not (f("token")):
@@ -28,8 +27,4 @@ def run(*args, **kwargs):
 			bot.run(token)
 	except:
 		pass
-
-main_thread = threading.Thread(
-	target=run
-)
 
