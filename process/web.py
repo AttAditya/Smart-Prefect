@@ -16,5 +16,5 @@ def home():
     return f("web/index.html")
 
 def run():
-    pass
+    app.run(host="0.0.0.0")
 
