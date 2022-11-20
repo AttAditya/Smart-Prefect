@@ -13,8 +13,6 @@ import bot as smart_prefect_bot
 def run(*args, **kwargs):
 	database.load()
 	bot = smart_prefect_bot.Prefect()
-	
-	web.run(*args, **kwargs)
 
 	token = ""
 	if not (f("token")):
