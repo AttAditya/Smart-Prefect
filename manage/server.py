@@ -87,8 +87,7 @@ async def create_channel(ctx, args, bot):
 
 			field1 = {
 				"name": "Error",
-				"value": "Type was not given. Available types to create: `Text`, \
-					`Voice`, `Stage`, `Forum`, `Category`"
+				"value": "Type was not given. Available types to create: `Text`, `Voice`, `Stage`, `Forum`, `Category`"
 			}
 			embed.add_field(**field1)
 
@@ -125,8 +124,7 @@ async def create_channel(ctx, args, bot):
 
 			field1 = {
 				"name": "Error",
-				"value": "Type was invalid. Available types to create: `Text`, \
-					`Voice`, `Stage`, `Forum`, `Category`"
+				"value": "Type was invalid. Available types to create: `Text`, `Voice`, `Stage`, `Forum`, `Category`"
 			}
 			embed.add_field(**field1)
 
@@ -241,8 +239,7 @@ async def reaction_role(ctx, args, bot):
 			"name":
 			"Error",
 			"value":
-			f"Role not found: {role_raw}\n\
-				Please try using role id or mentioning role correctly."
+			f"Role not found: {role_raw}\nPlease try using role id or mentioning role correctly."
 		}
 		embed.add_field(**field1)
 

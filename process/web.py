@@ -15,5 +15,6 @@ app = flask.Flask("Smart Prefect Website", **app_kwargs)
 def home():
     return f("web/index.html")
 
-app.run()
+def run():
+    app.run()
 

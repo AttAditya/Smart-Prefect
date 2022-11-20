@@ -6,6 +6,7 @@ import process.reactions as reactions
 import process.ready as ready
 import process.quickfunctions as quickfunctions
 import process.database as database
+import process.web as web
 
 import bot as smart_prefect_bot
 
