@@ -7,9 +7,7 @@ async def function_names(ctx, args, bot):
 
 	content = ", ".join(functions)
 	content = f"```csv\n{content}```"
-	content += "\n**NOTE**: If you passed name of a function and this appears, \
-		the function might not be available. \
-		You can also try removing spaces if any after command name."
+	content += "\n**NOTE**: If you passed name of a function and this appears, the function might not be available. You can also try removing spaces if any after command name."
 
 	if args in functions:
 		if hasattr(getattr(math, args), "__text_signature__"):
@@ -41,12 +39,9 @@ async def calculator(ctx, args, bot):
 	try:
 		content = eval(args if args.replace(" ", "") != "" else "0")
 		args_ = args.replace("*", "\\*")
-		content = f"**Expression**: {args_}\n\
-			**Result**: *`{content}`*"
+		content = f"**Expression**: {args_}\n**Result**: *`{content}`*"
 	except:
-		content = f"**Expression**: {args}\n\
-			**Result**: Error! \
-			*Please check you expression...*"
+		content = f"**Expression**: {args}\n**Result**: *Error! Please check you expression...*"
 
 	embed_info = {
 		"title": "Knowledge",

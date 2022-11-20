@@ -4,6 +4,7 @@ import process
 class Prefect(discord.Client):
 	def __init__(bot, *args, **kwargs):
 		super().__init__(intents=discord.Intents.all(), *args, **kwargs)
+		bot.__ver__ = process.quickfunctions.f("locale/version")
 	
 	async def on_ready(bot):
 		await process.ready.run(bot)

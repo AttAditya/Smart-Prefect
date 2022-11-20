@@ -30,9 +30,7 @@ async def status(ctx, args, bot):
 	embed_info = {"title": "Information", "color": 0x66f542}
 	embed = discord.Embed(**embed_info)
 
-	status_data = f"**Host**: {socket.gethostname()}\n\
-		**Latency**: {int(bot.latency*1000)}ms\n\
-		**Status**: {bot.status}"
+	status_data = f"**Version**: {bot.__ver__}\n**Host**: {socket.gethostname()}\n**Latency**: {int(bot.latency*1000)}ms\n**Status**: {bot.status}"
 
 	field1 = {"name": "Status", "value": status_data}
 	embed.add_field(**field1)
