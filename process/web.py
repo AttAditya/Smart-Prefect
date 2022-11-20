@@ -1,6 +1,5 @@
 from process.quickfunctions import f
-import flask
-import logging
+from modules import threading, logging, flask
 
 flask_logger = logging.getLogger("werkzeug")
 flask_logger.level = logging.ERROR
@@ -16,5 +15,11 @@ def home():
     return f("web/index.html")
 
 def run():
-    app.run(host="0.0.0.0")
+    app_thread = threading.Thread(
+        target=app.run,
+        kwargs={
+            "host": "0.0.0.0"
+        }
+    )
+    app_thread.run()
 
