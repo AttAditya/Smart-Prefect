@@ -14,12 +14,10 @@ app = flask.Flask("Smart Prefect Website", **app_kwargs)
 def home():
     return f("web/index.html")
 
-def run():
-    app_thread = threading.Thread(
-        target=app.run,
-        kwargs={
-            "host": "0.0.0.0"
-        }
-    )
-    app_thread.run()
+app_thread = threading.Thread(
+    target=app.run,
+    kwargs={
+        "host": "0.0.0.0"
+    }
+)
 

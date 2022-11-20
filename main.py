@@ -1,5 +1,5 @@
-from process import run
+from process import main_thread
 
 if __name__ == "__main__":
-	run()
+	main_thread.run()
 
