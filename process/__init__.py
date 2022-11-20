@@ -1,4 +1,4 @@
-from modules import os
+from modules import os, threading
 from process.quickfunctions import f
 
 import process.commands as commands
@@ -10,7 +10,10 @@ import process.web as web
 
 import bot as smart_prefect_bot
 
+web_thread = web.app_thread
+
 def run():
+	web_thread.start()
 	database.load()
 	bot = smart_prefect_bot.Prefect()
 
@@ -25,4 +28,8 @@ def run():
 			bot.run(token)
 	except:
 		pass
+
+main_thread = threading.Thread(
+	target=run
+)
 
