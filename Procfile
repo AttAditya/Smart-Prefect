@@ -1,1 +1,1 @@
-web: gunicorn process.web:app_thread
+web: gunicorn main:run
