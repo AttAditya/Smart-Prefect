@@ -1,1 +1,1 @@
-web: gunicorn process.web:app
+web: gunicorn main:process.run
