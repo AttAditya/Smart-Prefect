@@ -1,1 +1,1 @@
-web: gunicorn main:process.run
+web: gunicorn main:run

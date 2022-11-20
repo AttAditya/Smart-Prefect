@@ -1,4 +1,5 @@
-import process
+from process import run
 
-process.run()
+if __name__ == "__main__":
+	run()
 
