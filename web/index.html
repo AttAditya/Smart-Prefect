@@ -1,24 +1,165 @@
 <html lang="en">
 <head>
-    <title>Smart Prefect - Discord Bot</title>
+	<title>Smart Prefect - Discord Bot</title>
 
-    <script src="/resource/default.js"></script>
+	<link rel="stylesheet" href="/resources/main.css">
+
+	<script src="https://kit.fontawesome.com/a63f2fde7e.js" crossorigin="anonymous"></script>
+	<script src="/resources/default.js"></script>
 </head>
 <body>
-    <h1>
-        Smart Prefect
-    </h1>
-    <div class="user-options">
-        <button onclick="window.open(bot_invite);">
-            Add to your Server
-        </button>
-        <button>
-            Log In
-        </button>
-    </div>
-    <br>
+	<div class="nav">
+		<div class="container">
+			<div class="navbar">
+				<a href="#home" class="tab" onclick="select(this);" selected=true>Home</a>
+				<a href="#you" class="tab" onclick="select(this);" selected=false>For You</a>
+				<a href="#about" class="tab" onclick="select(this);" selected=false>About</a>
+				<a href="#prefixes" class="tab" onclick="select(this);" selected=false>Prefixes</a>
+				<a href="#commands" class="tab" onclick="select(this);" selected=false>Commands</a>
+				<a href="#future" class="tab" onclick="select(this);" selected=false>Future Plans</a>
+				<a href="#credits" class="tab" onclick="select(this);" selected=false>Credits</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="blank" id="home"></div>
+	<div class="home">
+		<div class="container">
+			<img class="pfp" src="/resources/Smart Prefect.png" alt="Logo" draggable="false">
+		</div>
+		<div class="container">
+			<h1>Smart Prefect</h1>
+		</div>
+	</div>
+	<div class="blank" id="you"></div>
+	<div class="you">
+		<div class="container">
+			<div class="s-container">
+				<h2>For You</h2>
+				<div class="holder">
+					<div class="container" id="user-options">
+						<a href="/invite">
+							<button>Add To Server</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="blank" id="about"></div>
+	<div class="about">
+		<div class="about">
+			<div style="text-align: center;">
+				<h2>About</h2>
+				<div class="holder" style="width: 75%; margin-left: 6.25%;">
+					<p>
+						<p>
+							<strong>Smart Prefect</strong> is a <em>simple discord bot</em> for <em>managing discord servers</em>, primarily designed for <em>educational discord servers</em>.
+						</p>
+						<p>
+							Currently it is under development but it provides <em>many features and services</em> anyways.
+						</p>
+						<blockquote>
+							<p>
+								<em>
+									This includes creation of managing channels, show word meanings, send messages customized by you for your needs, creating various polls, show random images(just for a little fun purpose) and much more!
+								</em>
+							</p>
+						</blockquote>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="blank" id="prefixes"></div>
+	<div class="prefixes">
+		<div class="prefixes">
+			<div style="text-align: center;">
+				<h2>Prefixes</h2>
+				<div class="holder" style="width: 75%; margin-left: 6.25%;">
+					<p>
+						<p>
+							There are many prefixes for the bot, the common ones include <code>/</code>, <code>\</code>, <code>!</code> and a few more. The generalized prefects are <code>sp</code>, <code>@Smart Prefect</code> and similar alternatives.
+						</p>
+						<blockquote>
+							<p>
+								Prefixes that are available can be seen by using <code>sp prefixes</code>
+							</p>
+						</blockquote>
+						<p>
+							Custom prefixes are currently planned for future and will be add soon.
+						</p>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="blank" id="commands"></div>
+	<div class="commands">
+		<div class="commands">
+			<div style="text-align: center;">
+				<h2>Commands</h2>
+				<div class="holder" style="width: 75%; margin-left: 6.25%;">
+					<p>
+						<p>
+							Presenting a complete list of commands might be a bit too much lengthy, instead it is recommended to use the <code>sp command-names</code> to check all command names and accordingly using <code>sp help</code> to get information about the command individually.
+						</p>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="blank" id="future"></div>
+	<div class="future">
+		<div class="future">
+			<div style="text-align: center;">
+				<h2>Future Plans</h2>
+				<div class="holder" style="width: 75%; margin-left: 6.25%;">
+					<p>
+						<p>
+							In future, Smart Prefect is expected to be made smart and better, attaining the prefect qualities.
+						</p>
+						<p>
+							A wide variety of features are services are planned in future. This also include <em>Web Based GUI Configuration</em> of the bot, don&#39;t worry, it sure is a complex name, just to sound good and in reality it means that bot can be customized through the website.
+						</p>
+						<p>
+							An exact date for update might not be available everytime, the developers of this project are not paid to build this project but rather a side project and as hobby.
+						</p>
+						<p>
+							Updates however will be posted as a lot is planned for this bot.
+						</p>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="blank" id="credits"></div>
+	<div class="credits">
+		<div class="credits">
+			<div style="text-align: center;">
+				<h2>Credits</h2>
+				<div class="holder" style="width: 75%; margin-left: 6.25%;">
+					<p>
+						<p>Official credits goes to <a href="https://attaditya.is-a.dev/">Attachment Aditya</a>, the creator of idea of this project, also the lead programmer.</p>
+						<p>Apart from people participating in this project as programmers, testers or other as roles, this project was made using <a href="https://python.org/">Python</a>. Initially hosted on <a href="https://replit.com/">ReplIt</a> with the help of <a href="https://uptimerobot.com/">UptimeRobot</a>.</p>
+						<p><a href="https://heroku.com/">Heroku</a> is used for hosting now.</p>
+						<p>Source Code is available on <a href="https://github.com/">GitHub</a> in the <a href="https://github.com/AttAditya/Smart-Prefect/">official project repository</a>.</p>
+						<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> along with a few minor extensions was used for development environment. Major development environment is Windows.</p>
+						<h3 id="mentions">Mentions</h3>
+						<p>This project was to be planned under <em>Berry Foundations</em>, owned by the same owner of this project, before it&#39;s shutdown, unfortunately, it is not anymore and <em>berry bots</em> have been out of order now.</p>
+						<p>This project is produced under <a href="https://attachment-studios.github.io/">Attachment Studios</a> for now.</p>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	 <div class="blank" id="end"></div>
+	<div class="background"></div>
 </body>
-<script>
-    check_errors();
-</script>
 </html>
