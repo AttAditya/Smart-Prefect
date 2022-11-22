@@ -1,4 +1,4 @@
-from modules import os, threading
+from modules import os
 from process.quickfunctions import f
 
 import process.commands as commands
@@ -6,7 +6,6 @@ import process.reactions as reactions
 import process.ready as ready
 import process.quickfunctions as quickfunctions
 import process.database as database
-import process.web as web
 
 import bot as smart_prefect_bot
 
